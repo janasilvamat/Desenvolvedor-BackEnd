@@ -1,0 +1,58 @@
+using static System.Console;
+/* 
+ comando usado para comentar um bloco de código
+*/
+
+BackgroundColor = ConsoleColor.Blue;//mudança de cor do fundo
+double numero = 1.73598597;
+WriteLine($"Salario = { numero:n}");//arredondamento de casas decimais
+Console.WriteLine("Hello, World!");
+Console.Write("SENAI");//saida de dados
+WriteLine("\tClodoaldo");//tabulação
+WriteLine("CAMPEAO\nClodoaldo");//quebra
+Title = "Aplicativo SENAI";
+string escola = "AMERICANA";
+WriteLine($"SENAI {escola}");//interpolação
+ForegroundColor = ConsoleColor.Green;//mudança de cor da letra      
+WriteLine("SENAI");
+ForegroundColor = ConsoleColor.Red;
+ResetColor();//voltar cor para o padrão
+WriteLine("SENAI");
+ReadKey();
+
+//Processamento de dados
+//Operadores aritméticos
+int a = 1 + 1;
+int b = 2 - 1;
+int c = 3 * 1;
+double d = 4 / 1;
+double e = 2 * 2 * 2;
+double f = Math.Sqrt(4); // Raiz quadrada de 4
+Math.Pow(2,3); // Potência de 2 elevado a 3
+double k = 1 + (1 - (2 * 3)) / 4;
+double j = 2%2; // ´Módulo: Resto da divisão de 2 por 2
+int y = 0;
+Console.WriteLine(y);
+y++;//mesma coisa de Y = Y+1. é um incremento de 1 unidade
+Console.WriteLine(y);
+y--;//mesma coisa de Y = Y-1. é um decremento de 1 unidade
+Console.WriteLine(y);
+y += 2;//mesma coisa de Y = Y+2. é um incremento de 2 unidades
+Console.WriteLine(y);
+y -=2;
+Console.WriteLine(y);
+y+=2;//mesma coisa de Y = Y+2. é um incremento de 2 unidades
+Console.WriteLine(y);
+y/=2;//mesma coisa de Y = Y/2. é uma divisão de 2 unidades
+Console.WriteLine(y);
+y%=2;//mesma coisa de Y = Y%2. é um módulo de 2 unidades
+Console.WriteLine(y);
+
+//Entrada de dados
+Console.WriteLine("Digite seu nome: ");
+string nome = Console.ReadLine();// Entrada de dados - Readline só lê dados do tipo string
+Console.WriteLine("Digite sua idade: ");
+int idade = int.Parse(Console.ReadLine());//Convertendo a entrada de dados para o tipo inteiro
+Console.WriteLine("Digite seu salário: ");
+double salario = double.Parse(Console.ReadLine());//Convertendo a entrada de dados para o tipo double
+Console.WriteLine($"Nome: {nome}, Idade {idade+1}, Salário = R$ {salario}");
