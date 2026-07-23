@@ -1,4 +1,5 @@
 ﻿//Declaração de variáveis
+/*
 double largura;
 double comprimento;
 double area;
