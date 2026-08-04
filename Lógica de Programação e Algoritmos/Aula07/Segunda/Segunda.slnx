@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Combustive/Combustive.csproj" />
+  <Project Path="Divisao/Divisao.csproj" />
+  <Project Path="Impares/Impares.csproj" />
+  <Project Path="Parque/Parque.csproj" />
+</Solution>
