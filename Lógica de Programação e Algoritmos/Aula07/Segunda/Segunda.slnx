@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Colecao/Colecao.csproj" />
   <Project Path="Combustive/Combustive.csproj" />
   <Project Path="Divisao/Divisao.csproj" />
   <Project Path="Impares/Impares.csproj" />
