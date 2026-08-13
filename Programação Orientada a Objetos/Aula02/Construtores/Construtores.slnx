@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Aplicativo01/Aplicativo01.csproj" Id="8306be5d-885c-4fff-b69f-cc53f77c8208" />
+  <Project Path="Aplicativo02/Aplicativo02.csproj" Id="c95c9f01-f13a-4186-b6c5-8b5f8bf87477" />
+  <Project Path="Aplicativo03/Aplicativo03.csproj" Id="bab51320-a5eb-49d9-8560-f52b8b6ae565" />
+  <Project Path="Estoque/Estoque.csproj" />
+</Solution>
