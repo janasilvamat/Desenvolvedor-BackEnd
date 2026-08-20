@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Contrato/Contrato.csproj" Id="fdd3e2b6-d718-460f-bda3-994ad1f7ce81" />
+  <Project Path="Pedido/Pedido.csproj" />
+</Solution>
