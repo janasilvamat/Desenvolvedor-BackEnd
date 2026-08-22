@@ -46,12 +46,19 @@ namespace Banco.Classes.Entidade
         //Metodos
         public virtual void Saque(double quantia)
         {
-            SaldoDaConta -= quantia;
+            SaldoDaConta -= quantia + 5.00;
         }
 
         public void Deposito(double quantia)
         {
             SaldoDaConta += quantia;
+        }
+        public override string ToString()
+        {
+            return $"Dados da conta:\n" +
+                   $"\tTitular: {TitularDaConta}\n" +
+                   $"\tNúmero: {NumeroDaConta}\n" +
+                   $"\tSaldo: {SaldoDaConta:C}\n";
         }
 
 

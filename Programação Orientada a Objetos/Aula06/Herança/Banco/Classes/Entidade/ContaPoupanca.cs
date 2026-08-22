@@ -18,18 +18,18 @@ namespace Banco.Classes.Entidade
 		//Construtores
         public ContaPoupanca(int numeroDaConta, string titularDaConta, double taxa) : base(numeroDaConta, titularDaConta) //base é uma chamada da implementação do construtor da superclasse na subclasse
         {
-            TaxaDeJuros = taxa;
+            TaxaDeJuros = 0;
         }
 
         public ContaPoupanca(int numeroDaConta, string titularDaConta, double saldoDaConta, double taxa) : base(numeroDaConta, titularDaConta, saldoDaConta)
         {
-            TaxaDeJuros = taxa;
+            TaxaDeJuros = 0;
         }
 
         //Métodos
         public override void Saque(double quantia)
         {
-            SaldoDaConta -= quantia + (quantia * TaxaDeJuros);
+            SaldoDaConta -= quantia;
         }
 
 

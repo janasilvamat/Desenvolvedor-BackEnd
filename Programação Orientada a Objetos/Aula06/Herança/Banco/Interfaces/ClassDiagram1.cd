@@ -3,7 +3,7 @@
   <Class Name="Banco.Classes.Entidade.Conta">
     <Position X="9" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACACAAACAEAAAAAAAAAAAAAAAAAAAAEAAEAAAAGAAA=</HashCode>
+      <HashCode>AACACAAACAEAAAAEAAAAAAAAAAAAAAAEAAEAAAAGAAA=</HashCode>
       <FileName>Classes\Entidade\Conta.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -23,7 +23,7 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="Banco.Interfaces.IOperacoes" Collapsed="true">
-    <Position X="2.75" Y="1.25" Width="1.5" />
+    <Position X="5.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IOperacoes.cs</FileName>
