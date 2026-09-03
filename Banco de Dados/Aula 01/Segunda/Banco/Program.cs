@@ -75,13 +75,13 @@ void ConsultaConta(ContaContext conta)
     Console.WriteLine("--Consulta de Conta--");
     Console.Write("Digite o número da conta: ");
     int numero = int.Parse(Console.ReadLine());
-    var contaColsultada = conta.Contas.FirstOrDefault(c => c.NumeroDaConta == numero);
-    if (contaColsultada == null)
+    var contaConsultada = conta.Contas.FirstOrDefault(c => c.NumeroDaConta == numero);
+    if (contaConsultada == null)
     {
         Console.WriteLine($"\n Conta {numero} não encontrada!");
         return;
     }
-    contaColsultada.ExibirDados();//Read
+    contaConsultada.ExibirDados();//Read
 
     continuar = true;
 
@@ -100,24 +100,29 @@ void ConsultaConta(ContaContext conta)
                 //Operação de depósito
                 Console.Write("Digite o valor do depósito: ");
                 decimal valor = decimal.Parse(Console.ReadLine());
-                contaColsultada.Depositar(valor);
+                contaConsultada.Depositar(valor);
                 conta.SaveChanges();
-                contaColsultada.ExibirDados();
+                contaConsultada.ExibirDados();
                 break;
             case 2:
                 //Sacar
                 Console.Write("Digite o valor para sacar: ");
                 valor = decimal.Parse(Console.ReadLine());
-                contaColsultada.Sacar(valor);
+                contaConsultada.Sacar(valor);
                 conta.SaveChanges();
+                contaConsultada.ExibirDados();
                 break;
             case 3:
                 //Alterar titular
+                Console.Write("Digite o novo titular da conta: ");
+                string novoTitular = Console.ReadLine();
+                contaConsultada.TitularDaConta = novoTitular;
+                conta.SaveChanges();
+                contaConsultada.ExibirDados();
                 break;
             case 4:
                 //Sair
-                continuar = false;
-                break;
+                return;
             default:
                 Console.WriteLine("Opção inválida!");
                 break;
