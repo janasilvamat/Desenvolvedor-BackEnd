@@ -15,16 +15,20 @@ namespace Vendas.Classes.Contextos
             string caminho = @"Server = ECFP507D1319388\SQLEXPRESS03; Database=CamisasSENAI; Trusted_Connection=True; TrustServerCertificate=True";
             opcoesDeConstrucao.UseSqlServer(caminho);
         }
-
+        
         protected override void OnModelCreating(ModelBuilder modeloDeConstrucao)
         {
             modeloDeConstrucao.Entity<Vendas1>(entidade =>
             {
+                entidade.ToTable("VendasMarket");
                 entidade.HasKey(e => e.Id);
+                entidade.Property(e => e.DataCompra);
                 entidade.Property(e => e.Tipo);
                 entidade.Property(e => e.Marca);
                 entidade.Property(e => e.Faturamento);
+                entidade.Property(e => e.Lucro);
             });
-        }
+
+          }
     }
 }
