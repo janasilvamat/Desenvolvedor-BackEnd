@@ -9,7 +9,7 @@ public partial class Principal : Form
 {
     // Controlador que concentra toda a lógica de animação do panel1.
     private readonly AnimationPanel animacaoPainel;
-
+    EstoqueContexto contexto = new EstoqueContexto();
     public Principal()
     {
         // Inicializa os controles criados pelo Windows Forms Designer.
@@ -26,8 +26,27 @@ public partial class Principal : Form
 
     private void button2_Click(object? sender, EventArgs e)
     {
-        // Solicita à classe de animação que abra o painel ao clicar em Comprar.
-        animacaoPainel.Abrir();
+        try
+        {
+            DataGridViewRow linhaSelecionada = dataGridView1.SelectedRows[0];
+            textBox2.Text = linhaSelecionada.Cells["Modelo"].Value.ToString();
+            textBox3.Text = linhaSelecionada.Cells["Tipo"].Value.ToString();
+            textBox4.Text = linhaSelecionada.Cells["Valor"].Value.ToString();
+            textBox5.Text = linhaSelecionada.Cells["Quantidade"].Value.ToString();
+            pictureBox1.ImageLocation = contexto.Estoque.FirstOrDefault(m => m.Modelo.Equals(linhaSelecionada.Cells["Modelo"].Value.ToString())).Foto;
+
+
+
+            // Solicita à classe de animação que abra o painel ao clicar em Comprar.
+            animacaoPainel.Abrir();
+
+        }
+        catch (Exception)
+        {
+
+            MessageBox.Show("Selecione uma linha da tabela");
+        }
+
     }
 
     private void FecharPanel_Click(object? sender, EventArgs e)
@@ -39,12 +58,54 @@ public partial class Principal : Form
     private void button1_Click(object sender, EventArgs e)
     {
         EstoqueContexto contexto = new EstoqueContexto();
+        Dados();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        int quantidade = int.Parse(textBox5.Text);
+        int comprar = int.Parse(numericUpDown1.Text);
+        decimal valor = decimal.Parse(textBox4.Text.Trim("R$"));
+        decimal total = valor * comprar;
+        MessageBox.Show($"Total da venda: {total:C}" + $"\nQuantidade adquirida: {comprar}");
+
+        var item = contexto.Estoque.FirstOrDefault(i => i.Modelo.Equals(textBox2.Text));
+        item.RequisicaoQuantidade(comprar);
+        contexto.SaveChanges();
+
+
+    }
+
+    private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void textBox1_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            Dados();
+            textBox1.Text = "";
+        }
+
+    }
+    /// <summary>
+    /// Inserir os dados no dataGridView1
+    /// </summary>
+
+    private void Dados()
+    {
         bool moto = checkBox1.Checked;
         bool carro = checkBox2.Checked;
         string texto = textBox1.Text;
+        string filtro = comboBox1.Text;
 
-        Pesquisa.Pesquisas(moto, carro, texto, dataGridView1);
+        Pesquisa.Pesquisas(moto, carro, texto, dataGridView1, filtro);
     }
 
-    
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

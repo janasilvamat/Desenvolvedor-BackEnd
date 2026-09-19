@@ -23,5 +23,12 @@ namespace Cars.Classes.Entidades
             Foto = foto;
         }
 
+        public void RequisicaoQuantidade(int qtd)
+        {
+            {
+                Quantidade -= qtd;
+            }
+            
+        }
     }
 }
