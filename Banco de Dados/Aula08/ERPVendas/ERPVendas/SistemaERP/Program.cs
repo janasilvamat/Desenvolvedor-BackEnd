@@ -29,9 +29,9 @@ namespace SistemaERP
 
             if (TestarConexaoBanco())
             {
-                MessageBox.Show("Conexão realizada com sucesso!");
+                //MessageBox.Show("Conexão realizada com sucesso!");
                 //Application.Run(new Login()); utilização futura
-                Application.Run(new Registrar());
+                Application.Run(new ERP());
             }
             else
             {
