@@ -9,9 +9,16 @@ namespace Banco.Classes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class ContasController : ControllerBase
     {
         RepositorioContas rep = new RepositorioContas();
+        /// <summary>
+        /// Lista todas as contas cadastradas no banco de dados.
+        /// </summary>
+        /// <remarks> Não precisa de parâmetros. Retorna uma lista vazia se não houver registros</remarks>
+        /// <returns>Lista de Contas</returns>
+        /// <response code="200">Lista retornada com sucesso</response>
         // GET: api/<ContasController>
         [HttpGet]
         public IEnumerable<ContaBancaria> Get()
